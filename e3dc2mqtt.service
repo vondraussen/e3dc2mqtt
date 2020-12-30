@@ -1,0 +1,27 @@
+[Unit]
+Description=E3DC to MQTT gateway
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/lib/e3dc2mqtt/e3dc2mqtt.py
+# Disable Python's buffering of STDOUT and STDERR, so that output from the
+# service shows up immediately in systemd's logs
+Environment=PYTHONUNBUFFERED=1
+Environment=E3DC2MQTT_MQTT_USER=
+Environment=E3DC2MQTT_MQTT_PW=
+Environment=E3DC2MQTT_MQTT_CLIENT_ID=
+Environment=E3DC2MQTT_MQTT_BROKER=
+Environment=E3DC2MQTT_MQTT_PORT=
+Environment=E3DC2MQTT_MQTT_CA_CERT=
+Environment=E3DC2MQTT_MQTT_TOPIC=
+Environment=E3DC2MQTT_MODBUS_HOST=
+Environment=E3DC2MQTT_INFLUX_MEASUREMENT_TAG=
+Restart=on-failure
+# Our service will notify systemd once it is up and running
+#Type=notify
+Type=simple
+User=##USER##
+
+[Install]
+# Tell systemd to automatically start this service when the system boots
+# (assuming the service is enabled)
+WantedBy=default.target
