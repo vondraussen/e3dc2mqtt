@@ -1,0 +1,14 @@
+# E3DC2MQTT
+E3DC2MQTT is a simple E3DC (tcp/modbus) to MQTT gateway.
+
+## Environment Variables
+The following environment variables can be used to configure the gateway.
+- E3DC2MQTT_MQTT_USER
+- E3DC2MQTT_MQTT_PW
+- E3DC2MQTT_MQTT_CLIENT_ID
+- E3DC2MQTT_MQTT_BROKER
+- E3DC2MQTT_MQTT_PORT
+- E3DC2MQTT_MQTT_CA_CERT
+- E3DC2MQTT_MQTT_TOPIC
+- E3DC2MQTT_MODBUS_HOST
+- E3DC2MQTT_INFLUX_MEASUREMENT_TAG
